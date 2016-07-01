@@ -1,11 +1,54 @@
 from __future__ import print_function
 from lxml import html
-from pprint import pprint
+import pprint
 import requests
 import time
 # import datetime
 import os
 import difflib
+
+# Google sheets setup
+import httplib2
+
+from apiclient import discovery
+import oauth2client
+from oauth2client import client
+from oauth2client import tools
+
+try:
+    import argparse
+    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
+except ImportError:
+    flags = None
+
+    # If modifying these scopes, delete your previously saved credentials
+    # at ~/.credentials/sheets.googleapis.com-python-quickstart.json
+SCOPES = 'https://www.googleapis.com/auth/spreadsheets'
+CLIENT_SECRET_FILE = 'client_secret.json'
+APPLICATION_NAME = 'Google Sheets API Python Quickstart'
+
+
+def get_credentials():
+        home_dir = os.path.expanduser('~')
+        credential_dir = os.path.join(home_dir, '.credentials')
+        if not os.path.exists(credential_dir):
+            os.makedirs(credential_dir)
+        credential_path = os.path.join(credential_dir,
+                                       'sheets.googleapis.com-python-quickstart.json')
+
+        store = oauth2client.file.Storage(credential_path)
+        credentials = store.get()
+        if not credentials or credentials.invalid:
+            flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
+            flow.user_agent = APPLICATION_NAME
+            if flags:
+                credentials = tools.run_flow(flow, store, flags)
+            else:  # Needed only for compatibility with Python 2.6
+                credentials = tools.run(flow, store)
+            print('Storing credentials to ' + credential_path)
+        return credentials
+
+
 
 # Declare last scrape
 allLogs = [d for d in os.listdir('./logs')]
@@ -37,39 +80,87 @@ pages = {
 xpath = ''
 
 
-# El loopo
-for site in pages:
-    page = requests.get(pages[site]['url'])
-    tree = html.fromstring(page.content)
-    print(page)
+def main():
 
-# Convert paragraphs to string
-    content = '\n'.join(tree.xpath('//p/text()')).encode('utf-8').strip()
-#    print(content)
+    # El loopo
+    for site in pages:
+        page = requests.get(pages[site]['url'])
+        tree = html.fromstring(page.content)
+        print(page)
 
-# Save it
+    # Convert paragraphs to string
+        content = '\n'.join(tree.xpath('//p/text()')).encode('utf-8').strip()
+    #    print(content)
 
-#    print(logPath + "/" + pages[site]['title'] + '.txt')
+    # Save it
 
-    with open(logPath + "/" + pages[site]['title'] + '.txt', 'a') as logFile:
-        logFile.write(content)
-# Open both copies
-    with open(lastLogDir + "/" + pages[site]['title'] + '.txt', 'r') as l:
-        lastLog = l.read()
-    l.closed
+    #    print(logPath + "/" + pages[site]['title'] + '.txt')
 
-    with open(logPath + "/" + pages[site]['title'] + '.txt', 'r') as t:
-        thisLog = t.read()
-    t.closed
+        with open(logPath + "/" + pages[site]['title'] + '.txt', 'a') as logFile:
+            logFile.write(content)
+    # Open both copies
+        with open(lastLogDir + "/" + pages[site]['title'] + '.txt', 'r') as l:
+            lastLog = l.read()
+        l.closed
 
-# Check for diff
-    # print('Raw content', content, ' \n --------------------\n', lastLog)
-    
-    # d = difflib.Differ()
-    diff = difflib.unified_diff(thisLog.splitlines(), lastLog.splitlines(), n=0)
-    print('>>>>>>>>>>>diff<<<<<<<<<<<<<', '\n'.join(diff))
+        with open(logPath + "/" + pages[site]['title'] + '.txt', 'r') as t:
+            thisLog = t.read()
+        t.closed
 
+    # Check for diff
+        # print('Raw content', content, ' \n --------------------\n', lastLog)
 
-# Break up diff
+        # d = difflib.Differ()
+        diff = difflib.unified_diff(thisLog.splitlines(), lastLog.splitlines(), n=0)
+        diffResult = '\n'.join(diff)
 
-# Push diff to spreadsheet
+        print('>>>>>>>>>>>diff<<<<<<<<<<<<<', diffResult)
+        print('Diff is of type', type(diff))
+        if diffResult:
+            print('and evaluates to true')
+
+        if not diffResult:
+            print('There was no diff. All is well.')
+
+    # Break up diff
+
+    # Push diff to spreadsheet
+    if diffResult:
+
+        credentials = get_credentials()
+        http = credentials.authorize(httplib2.Http())
+        discoveryUrl = ('https://sheets.googleapis.com/$discovery/rest?'
+                        'version=v4')
+        service = discovery.build('sheets', 'v4', http=http,
+                                   discoveryServiceUrl=discoveryUrl)
+        sheetBody = []
+        sheetBody.append({
+
+            'appendCells': {
+                'rows': [
+                    {
+                        'values': [
+                            {
+                                'userEnteredValue': {'numberValue': ts}
+                            },
+                            {
+                                'userEnteredValue': {'stringValue': dt}
+                            },
+                            {
+                                'userEnteredValue': {'stringValue': diffResult}
+                            }
+                        ]
+                    }
+                ],
+                'fields': "*"
+            }})
+
+        spreadsheetId = '1ZWBONvazeyqyDcJ1q_aF8_bbV4iJzwEErrtnXuB9Y68'
+        batchUpdateSheetBody= {'requests': sheetBody}
+        print(batchUpdateSheetBody)
+        service.spreadsheets().batchUpdate(spreadsheetId=spreadsheetId,
+                                           body=batchUpdateSheetBody).execute()
+        print(sheetBody)
+
+if __name__ == '__main__':
+    main()
