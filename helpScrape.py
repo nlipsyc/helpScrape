@@ -98,6 +98,7 @@ def main():
 
         with open(logPath + "/" + pages[site]['title'] + '.txt', 'a') as logFile:
             logFile.write(content)
+        logFile.closed
     # Open both copies
         with open(lastLogDir + "/" + pages[site]['title'] + '.txt', 'r') as l:
             lastLog = l.read()
