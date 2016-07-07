@@ -113,11 +113,13 @@ def main():
         # d = difflib.Differ()
         diff = difflib.unified_diff(thisLog.splitlines(), lastLog.splitlines(), n=0)
         diffResult = '\n'.join(diff)
-
+        if diffResult:
+            pages[site]['title'] + diffResult
+        print('site len pages', site == str(len(pages)))
         print('>>>>>>>>>>>diff<<<<<<<<<<<<<', diffResult)
         print('Diff is of type', type(diff))
         if diffResult:
-            print('and evaluates to true')
+            print('Changes: ' + diffResult)
 
         if not diffResult:
             print('There was no diff. All is well.')
@@ -125,15 +127,15 @@ def main():
     # Break up diff
 
     # Push diff to spreadsheet
-    if diffResult:
 
-        credentials = get_credentials()
-        http = credentials.authorize(httplib2.Http())
-        discoveryUrl = ('https://sheets.googleapis.com/$discovery/rest?'
-                        'version=v4')
-        service = discovery.build('sheets', 'v4', http=http,
-                                   discoveryServiceUrl=discoveryUrl)
-        sheetBody = []
+    credentials = get_credentials()
+    http = credentials.authorize(httplib2.Http())
+    discoveryUrl = ('https://sheets.googleapis.com/$discovery/rest?'
+                    'version=v4')
+    service = discovery.build('sheets', 'v4', http=http,
+                              discoveryServiceUrl=discoveryUrl)
+    sheetBody = []
+    if diffResult:
         sheetBody.append({
 
             'appendCells': {
@@ -154,13 +156,34 @@ def main():
                 ],
                 'fields': "*"
             }})
+    elif site == str(len(pages)):
+        sheetBody.append({
 
-        spreadsheetId = '1ZWBONvazeyqyDcJ1q_aF8_bbV4iJzwEErrtnXuB9Y68'
-        batchUpdateSheetBody= {'requests': sheetBody}
-        print(batchUpdateSheetBody)
-        service.spreadsheets().batchUpdate(spreadsheetId=spreadsheetId,
-                                           body=batchUpdateSheetBody).execute()
-        print(sheetBody)
+            'appendCells': {
+                'rows': [
+                    {
+                        'values': [
+                            {
+                                'userEnteredValue': {'numberValue': ts}
+                            },
+                            {
+                                'userEnteredValue': {'stringValue': dt}
+                            },
+                            {
+                                'userEnteredValue': {'stringValue': 'All quiet on the western front'}
+                            }
+                        ]
+                    }
+                ],
+                'fields': "*"
+            }})
+
+    spreadsheetId = '1ZWBONvazeyqyDcJ1q_aF8_bbV4iJzwEErrtnXuB9Y68'
+    batchUpdateSheetBody = {'requests': sheetBody}
+    print(batchUpdateSheetBody)
+    service.spreadsheets().batchUpdate(spreadsheetId=spreadsheetId,
+                                       body=batchUpdateSheetBody).execute()
+    print('Sheet body ', sheetBody)
 
 if __name__ == '__main__':
     main()
