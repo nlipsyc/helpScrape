@@ -1,6 +1,6 @@
 from __future__ import print_function
 from lxml import html
-import pprint
+#import pprint
 import requests
 import time
 # import datetime
@@ -14,6 +14,9 @@ from apiclient import discovery
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
+
+# List of websites
+from websites import *
 
 try:
     import argparse
@@ -72,25 +75,19 @@ if not os.path.exists(logPath):
 
 print('lastLogDir', lastLogDir)
 
-# The pages we're going to scrape
-pages = {
-    '1': {
-        'title': 'photobucketImport',
-        'url': 'http://support.photobucket.com/hc/en-us/articles/200724324-Linking-and-Embedding-Images'}}
-xpath = ''
-
-
 def main():
 
+    returnedPages = 0
+    sheetBody = []
     # El loopo
     for site in pages:
         page = requests.get(pages[site]['url'])
         tree = html.fromstring(page.content)
-        print(page)
+        print('URL', pages[site]['url'])
 
     # Convert paragraphs to string
         content = '\n'.join(tree.xpath('//p/text()')).encode('utf-8').strip()
-    #    print(content)
+        print('CONTENT', content, '///END CONTENT')
 
     # Save it
 
@@ -104,9 +101,10 @@ def main():
             lastLog = l.read()
         l.closed
 
-        with open(logPath + "/" + pages[site]['title'] + '.txt', 'r') as t:
-            thisLog = t.read()
-        t.closed
+        thisLog = content
+        # with open(logPath + "/" + pages[site]['title'] + '.txt', 'r') as t:
+        #     thisLog = t.read()
+        # t.closed
 
     # Check for diff
         # print('Raw content', content, ' \n --------------------\n', lastLog)
@@ -115,73 +113,78 @@ def main():
         diff = difflib.unified_diff(thisLog.splitlines(), lastLog.splitlines(), n=0)
         diffResult = '\n'.join(diff)
         if diffResult:
-            pages[site]['title'] + diffResult
-        print('site len pages', site == str(len(pages)))
+            diffResult = pages[site]['url'] + diffResult
+        print('site, len pages', site, str(len(pages)))
         print('>>>>>>>>>>>diff<<<<<<<<<<<<<', diffResult)
-        print('Diff is of type', type(diff))
         if diffResult:
             print('Changes: ' + diffResult)
 
         if not diffResult:
             print('There was no diff. All is well.')
+        
+        returnedPages += 1
+        print('>>sheet body<<', sheetBody)
 
-    # Break up diff
+
+    # Format diff for spreadsheet
+
+        print('>>returned pages<<', returnedPages)
+        if diffResult:
+            sheetBody.append({
+
+                'appendCells': {
+                    'rows': [
+                        {
+                            'values': [
+                                {
+                                    'userEnteredValue': {'numberValue': ts}
+                                },
+                                {
+                                    'userEnteredValue': {'stringValue': dt}
+                                },
+                                {
+                                    'userEnteredValue': {'stringValue': diffResult}
+                                }
+                            ]
+                        }
+                    ],
+                    'fields': "*"
+                }})
+            print('this should be printed to SHEET BODY', sheetBody)
+        # Unless all pages have been tried and there are no diffs
+        elif returnedPages == int(len(pages)) and not sheetBody:
+            sheetBody.append({
+
+                'appendCells': {
+                    'rows': [
+                        {
+                            'values': [
+                                {
+                                    'userEnteredValue': {'numberValue': ts}
+                                },
+                                {
+                                    'userEnteredValue': {'stringValue': dt}
+                                },
+                                {
+                                    'userEnteredValue': {'stringValue': 'All quiet on the western front'}
+                                }
+                            ]
+                        }
+                    ],
+                    'fields': "*"
+                }})
 
     # Push diff to spreadsheet
-
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     discoveryUrl = ('https://sheets.googleapis.com/$discovery/rest?'
                     'version=v4')
     service = discovery.build('sheets', 'v4', http=http,
                               discoveryServiceUrl=discoveryUrl)
-    sheetBody = []
-    if diffResult:
-        sheetBody.append({
-
-            'appendCells': {
-                'rows': [
-                    {
-                        'values': [
-                            {
-                                'userEnteredValue': {'numberValue': ts}
-                            },
-                            {
-                                'userEnteredValue': {'stringValue': dt}
-                            },
-                            {
-                                'userEnteredValue': {'stringValue': diffResult}
-                            }
-                        ]
-                    }
-                ],
-                'fields': "*"
-            }})
-    elif site == str(len(pages)):
-        sheetBody.append({
-
-            'appendCells': {
-                'rows': [
-                    {
-                        'values': [
-                            {
-                                'userEnteredValue': {'numberValue': ts}
-                            },
-                            {
-                                'userEnteredValue': {'stringValue': dt}
-                            },
-                            {
-                                'userEnteredValue': {'stringValue': 'All quiet on the western front'}
-                            }
-                        ]
-                    }
-                ],
-                'fields': "*"
-            }})
 
     spreadsheetId = '1ZWBONvazeyqyDcJ1q_aF8_bbV4iJzwEErrtnXuB9Y68'
     batchUpdateSheetBody = {'requests': sheetBody}
-    print(batchUpdateSheetBody)
+    print('BATCH UPDATE SHEET BODY', batchUpdateSheetBody)
     service.spreadsheets().batchUpdate(spreadsheetId=spreadsheetId,
                                        body=batchUpdateSheetBody).execute()
     print('Sheet body ', sheetBody)
