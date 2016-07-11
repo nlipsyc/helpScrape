@@ -1,6 +1,7 @@
 from __future__ import print_function
 from lxml import html
-#import pprint
+from random import randint
+# import pprint
 import requests
 import time
 # import datetime
@@ -16,7 +17,7 @@ from oauth2client import client
 from oauth2client import tools
 
 # List of websites
-from websites import *
+from websites import pages
 
 try:
     import argparse
@@ -52,7 +53,6 @@ def get_credentials():
         return credentials
 
 
-
 # Declare last scrape
 allLogs = [d for d in os.listdir('./logs')]
 lastLogDir = ''
@@ -64,7 +64,11 @@ if allLogs:
 ts = time.time()
 dt = time.strftime('%d-%b-%y-%H:%M')
 print('ts dt', ts, dt)
-logPath = os.path.join('./logs/', dt)
+
+if not os.path.exists(os.path.join('./logs/', dt)):
+    logPath = os.path.join('./logs/', dt)
+else:
+    logPath = os.path.join('./logs/', dt + '-' + str(randint(100, 999)))  # The randint should never come out in production, only for testing more than once per minute
 
 print('logPath ' + logPath)
 
@@ -75,10 +79,12 @@ if not os.path.exists(logPath):
 
 print('lastLogDir', lastLogDir)
 
+
 def main():
 
     returnedPages = 0
-    sheetBody = []
+    changesSheetBody = []
+    logSheetBody = []
     # El loopo
     for site in pages:
         page = requests.get(pages[site]['url'])
@@ -90,16 +96,17 @@ def main():
         print('CONTENT', content, '///END CONTENT')
 
     # Save it
-
-    #    print(logPath + "/" + pages[site]['title'] + '.txt')
-
         with open(logPath + "/" + pages[site]['title'] + '.txt', 'a') as logFile:
             logFile.write(content)
         logFile.closed
     # Open both copies
-        with open(lastLogDir + "/" + pages[site]['title'] + '.txt', 'r') as l:
-            lastLog = l.read()
-        l.closed
+        if os.path.isfile(lastLogDir + "/" + pages[site]['title'] + '.txt'):
+            with open(lastLogDir + "/" + pages[site]['title'] + '.txt', 'r') as l:
+                lastLog = l.read()
+            l.closed
+        else:
+            print("Missing logfile " + lastLogDir + "/" + pages[site]['title'] + '.txt')
+            lastLog = ''
 
         thisLog = content
         # with open(logPath + "/" + pages[site]['title'] + '.txt', 'r') as t:
@@ -123,37 +130,37 @@ def main():
             print('There was no diff. All is well.')
         
         returnedPages += 1
-        print('>>sheet body<<', sheetBody)
+        print('>>changes sheet body<<', changesSheetBody)
+        print('>>log sheet body<<', logSheetBody)
 
 
     # Format diff for spreadsheet
 
         print('>>returned pages<<', returnedPages)
-        if diffResult:
-            sheetBody.append({
-
-                'appendCells': {
-                    'rows': [
+        change = {'appendCells': {
+            'rows': [
+                {
+                    'values': [
                         {
-                            'values': [
-                                {
-                                    'userEnteredValue': {'numberValue': ts}
-                                },
-                                {
-                                    'userEnteredValue': {'stringValue': dt}
-                                },
-                                {
-                                    'userEnteredValue': {'stringValue': diffResult}
-                                }
-                            ]
+                            'userEnteredValue': {'numberValue': ts}
+                        },
+                        {
+                            'userEnteredValue': {'stringValue': dt}
+                        },
+                        {
+                            'userEnteredValue': {'stringValue': diffResult}
                         }
-                    ],
-                    'fields': "*"
-                }})
-            print('this should be printed to SHEET BODY', sheetBody)
+                    ]
+                }
+            ],
+            'fields': "*"
+        }}
+        if diffResult:
+            changesSheetBody.append(change)
+            logSheetBody.append(change)
         # Unless all pages have been tried and there are no diffs
-        elif returnedPages == int(len(pages)) and not sheetBody:
-            sheetBody.append({
+        elif returnedPages == int(len(pages)) and not changesSheetBody:
+            logSheetBody.append({
 
                 'appendCells': {
                     'rows': [
@@ -182,12 +189,22 @@ def main():
     service = discovery.build('sheets', 'v4', http=http,
                               discoveryServiceUrl=discoveryUrl)
 
-    spreadsheetId = '1ZWBONvazeyqyDcJ1q_aF8_bbV4iJzwEErrtnXuB9Y68'
-    batchUpdateSheetBody = {'requests': sheetBody}
-    print('BATCH UPDATE SHEET BODY', batchUpdateSheetBody)
-    service.spreadsheets().batchUpdate(spreadsheetId=spreadsheetId,
-                                       body=batchUpdateSheetBody).execute()
-    print('Sheet body ', sheetBody)
+    changesSpreadsheetId = '1ZWBONvazeyqyDcJ1q_aF8_bbV4iJzwEErrtnXuB9Y68'
+    logSpreadsheetId = '1HWhex6PBRgW8ZZV7gB5l4lWNFR2lXqfNYnAuiVB_bAw'
+
+    if changesSheetBody:
+        changesBatchUpdateSheetBody = {'requests': changesSheetBody}
+        print('BATCH UPDATE SHEET BODY', changesBatchUpdateSheetBody)
+        service.spreadsheets().batchUpdate(spreadsheetId=changesSpreadsheetId,
+                                           body=changesBatchUpdateSheetBody).execute()
+        print('changes Sheet body ', changesSheetBody)
+
+    logBatchUpdateSheetBody = {'requests': logSheetBody}
+    print('BATCH UPDATE SHEET BODY', logBatchUpdateSheetBody)
+    service.spreadsheets().batchUpdate(spreadsheetId=logSpreadsheetId,
+                                       body=logBatchUpdateSheetBody).execute()
+    print('log Sheet body ', logSheetBody)
+
 
 if __name__ == '__main__':
     main()
