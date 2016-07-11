@@ -1,0 +1,87 @@
+You can get the URL link for your map by going to Print or Share > Share Link/URL. Select the top URL. If your map name is unique, you can use the following format for your URL: //www.zeemaps.com/your_map_name where “your_map_name” is the name of your map with spaces replaced with underscore character (“_”). For special characters, try using one or two underscores.
+As shown in the dialog above, the Share URL is for when you want to share a view-only map with others. If you want to share a fully editable map, use the second URL which says “editable version”.
+
+You can get PDF or PNG image of your map for a small fee. Go to Print or Share > PDF/PNG Image. Select the size and type of image (PNG or PDF) from the drop-down box. Click the Free Preview button before ordering to make sure your print is what you want. Enter your email address for us to email you the image or PDF.
+If you are a Power User, simple PNG and PDFs of your maps are unlimited and free. To upgrade your account, go to Account > Subscriptions and choose the subscription level. Power users can also perform bulk edits to entries and markers.
+
+ZeeMaps makes it easy to share your maps with friends, relatives, co-workers, customers, and other people. You can publish it to any Web site, blog, or message board. Go to Print or Share > Publish to Website. This will allow you to customize the way your map is published, and provide you with HTML code that can be copied and pasted onto your site.
+
+Yes, you can hide markers by clicking on Print or Share > Publish at the top of your map. This will take you to a page that allows you to customize your published map. Check the colors you would like to hide in the “Hide Colors” section.
+
+Lists can be displayed to the right of published maps by going to Print or Share > Publish in Website, then checking the “With list” box.
+
+Click on a marker on your map to make it the default marker for your published map. Then, click on Print or Share > Publish in Website, then check the “Open default marker” box.
+
+You can enable other users to add new entries to maps through your Web site by going to Print or Share > Publish in Website, then checking the “Allow additions” box.
+As the above dialog shows, the additions can be through a “Simple Add” dialog or a “Detailed Add” dialog. Use the one that best suits your requirements.
+
+Yes, you can use the Customizations > Reserved Groups and set the colors or marker categories to which you want only Admins to add new markers. Note that you must have an Admin Key set up for this to work.
+
+Go to Customizations > Change Add Marker Form and select the “New Entries must be approved by map Admins” box and submit. This will set up your map so that whenever a non-admin person adds an entry, it will be queued and not shown on the map immediately.
+Map admins can use the View > Show Pending Approval menu item to see all pending approval entries. They can modify the entries, delete any if necessary, and then use the Additions > Approve Pending to approve the entries.
+To receive email notifications for each added entry, use the Settings > Notifications menu item and then select the option for “Notify Admins of new entries”.
+
+Use the “Enable Search”, “Enable GeoSearch”, or “Enable Locate” options in the Print or Share > Publish in Website dialog to get different search options in your published map. The “Enable Search” is the most advanced, that will allow your users to search for locations based on entry fields combined with distance search. “Enable GeoSearch” will add a small address input box to the published map. Users can enter a location address in this input box and search for entries near that location. Finally “Enable Locate” will add a small input box to the published map also, but in this case the map will be repositioned to the given address without limiting the markers shown.
+
+Use the “Links” tab in the Print or Share > Publish in Website dialog to get links that you can add in your web page that will allow your users to interact with the map. You can add links for Additions, Search, toggling the visibility of certain colors, centering and zooming the map, etc.
+
+No. Changes you make to your ZeeMap are automatically reflected in your published map, so you do not need to re-publish it when you make additions or modifications.
+
+Yes! Go to Map > Remove Ads or Branding. Choose from three months, six months, or a year. Click Submit and you will be taken directly to a Paypal page where you can complete your transaction.
+Ads will be removed from any occurrence of the map, whether it’s on our servers or published on your website. White-labeled published map (no ZeeMaps logos) are also available.
+
+You can use Google Analytics to track hits for your map. Go to Settings > Tracking. You will need to create a Google Analytics account for the map. Find the code (see screenshot) and enter it into the tracking key box under Settings > Tracking.
+For maps published on a website, go to Print or Share > Publish in Website. Select the Track visits with Google Analytics and enter the key there.
+
+  Use this form to create your own interactive map.
+  
+Once you create a map, you can
+  add markers to the map, highlight regions, 
+  add text annotations, upload addresses from Excel 
+  spreadsheets, etc.
+  
+
+  Share the map in presentations using PNG or PDF images.You can get the URL link for your map by going to Print or Share > Share Link/URL. Select the top URL. If your map name is unique, you can use the following format for your URL: //www.zeemaps.com/your_map_name where “your_map_name” is the name of your map with spaces replaced with underscore character (“_”). For special characters, try using one or two underscores.
+As shown in the dialog above, the Share URL is for when you want to share a view-only map with others. If you want to share a fully editable map, use the second URL which says “editable version”.
+
+You can get PDF or PNG image of your map for a small fee. Go to Print or Share > PDF/PNG Image. Select the size and type of image (PNG or PDF) from the drop-down box. Click the Free Preview button before ordering to make sure your print is what you want. Enter your email address for us to email you the image or PDF.
+If you are a Power User, simple PNG and PDFs of your maps are unlimited and free. To upgrade your account, go to Account > Subscriptions and choose the subscription level. Power users can also perform bulk edits to entries and markers.
+
+ZeeMaps makes it easy to share your maps with friends, relatives, co-workers, customers, and other people. You can publish it to any Web site, blog, or message board. Go to Print or Share > Publish to Website. This will allow you to customize the way your map is published, and provide you with HTML code that can be copied and pasted onto your site.
+
+Yes, you can hide markers by clicking on Print or Share > Publish at the top of your map. This will take you to a page that allows you to customize your published map. Check the colors you would like to hide in the “Hide Colors” section.
+
+Lists can be displayed to the right of published maps by going to Print or Share > Publish in Website, then checking the “With list” box.
+
+Click on a marker on your map to make it the default marker for your published map. Then, click on Print or Share > Publish in Website, then check the “Open default marker” box.
+
+You can enable other users to add new entries to maps through your Web site by going to Print or Share > Publish in Website, then checking the “Allow additions” box.
+As the above dialog shows, the additions can be through a “Simple Add” dialog or a “Detailed Add” dialog. Use the one that best suits your requirements.
+
+Yes, you can use the Customizations > Reserved Groups and set the colors or marker categories to which you want only Admins to add new markers. Note that you must have an Admin Key set up for this to work.
+
+Go to Customizations > Change Add Marker Form and select the “New Entries must be approved by map Admins” box and submit. This will set up your map so that whenever a non-admin person adds an entry, it will be queued and not shown on the map immediately.
+Map admins can use the View > Show Pending Approval menu item to see all pending approval entries. They can modify the entries, delete any if necessary, and then use the Additions > Approve Pending to approve the entries.
+To receive email notifications for each added entry, use the Settings > Notifications menu item and then select the option for “Notify Admins of new entries”.
+
+Use the “Enable Search”, “Enable GeoSearch”, or “Enable Locate” options in the Print or Share > Publish in Website dialog to get different search options in your published map. The “Enable Search” is the most advanced, that will allow your users to search for locations based on entry fields combined with distance search. “Enable GeoSearch” will add a small address input box to the published map. Users can enter a location address in this input box and search for entries near that location. Finally “Enable Locate” will add a small input box to the published map also, but in this case the map will be repositioned to the given address without limiting the markers shown.
+
+Use the “Links” tab in the Print or Share > Publish in Website dialog to get links that you can add in your web page that will allow your users to interact with the map. You can add links for Additions, Search, toggling the visibility of certain colors, centering and zooming the map, etc.
+
+No. Changes you make to your ZeeMap are automatically reflected in your published map, so you do not need to re-publish it when you make additions or modifications.
+
+Yes! Go to Map > Remove Ads or Branding. Choose from three months, six months, or a year. Click Submit and you will be taken directly to a Paypal page where you can complete your transaction.
+Ads will be removed from any occurrence of the map, whether it’s on our servers or published on your website. White-labeled published map (no ZeeMaps logos) are also available.
+
+You can use Google Analytics to track hits for your map. Go to Settings > Tracking. You will need to create a Google Analytics account for the map. Find the code (see screenshot) and enter it into the tracking key box under Settings > Tracking.
+For maps published on a website, go to Print or Share > Publish in Website. Select the Track visits with Google Analytics and enter the key there.
+
+  Use this form to create your own interactive map.
+  
+Once you create a map, you can
+  add markers to the map, highlight regions, 
+  add text annotations, upload addresses from Excel 
+  spreadsheets, etc.
+  
+
+  Share the map in presentations using PNG or PDF images.

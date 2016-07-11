@@ -1,0 +1,257 @@
+This guide explains how to use the Google Fonts API to add fonts to your web
+pages. You don't need to do any programming; all you have to do is add a special
+stylesheet link to your HTML document, then refer to the font in a CSS style.
+Here's an example. Copy and paste the following HTML into a file:
+Then open the file in a modern web browser. You should see a page displaying the
+following, in the font called Tangerine:
+That sentence is ordinary text, so you can change how it looks by using CSS. Try
+adding a shadow to the style in the previous example:
+You should now see a drop shadow under the text:
+And that's only the beginning of what you can do with the Fonts API and CSS.
+You can start using the Google Fonts API in just two steps:
+Add a stylesheet link to request the desired web font(s):
+
+Style an element with the requested web font, either in a stylesheet:
+
+or with an inline style on the element itself:
+
+For a list of fonts you can use, see
+
+.
+To determine what URL to use in your stylesheet link, start with the Google
+Fonts API base URL:
+Then, add the 
+ URL parameter, with one or more font family names and
+styles.
+For example, to request the
+
+ font:
+To request multiple font families, separate the names with a pipe character
+(
+).
+For example, to request the fonts
+
+,
+
+, and
+
+:
+Requesting multiple fonts allows you to use all of those fonts in your page.
+(But don't go overboard; most pages don't need very many fonts, and requesting a
+lot of fonts may make your pages slow to load.)
+The Google Fonts API provides the regular version of the requested fonts by
+default. To request other styles or weights, append a colon (
+) to the name of
+the font, followed by a list of styles or weights separated by commas (
+).
+For example:
+To find out which styles and weights are available for a given font, see the
+font's listing in 
+.
+For each style you request, you can give either the full name or an
+abbreviation; for weights, you can alternatively specify a numerical weight:
+For example, to request Cantarell italic and Droid Serif bold, you could use any
+of the following URLs:
+
+Some of the fonts in the 
+
+support multiple scripts (like Latin, Cyrillic, and Greek for example). In order
+to specify which subsets should be downloaded the subset parameter should be
+appended to the URL.
+For example, to request the Cyrillic subset of the
+
+ font, the URL
+would be:
+To request the Greek subset of the
+
+ font, the URL
+would be:
+To request both Greek and Cyrillic subsets of the
+
+ font, the URL
+would be:
+The Latin subset is always included if available and need not be specified.
+Please note that if a client browser supports unicode-range
+(
+)
+the subset parameter is ignored; the browser will select from the subsets
+supported by the font to get what it needs to render the text.
+For a complete list of available fonts and font subsets please see
+
+.
+Oftentimes, when you want to use a web font on your website or application, you
+know in advance which letters you'll need. This often occurs when you're using a
+web font in a logo or heading.
+In these cases, you should consider specifying a 
+ value in your font
+request URL. This allows Google to return a font file that's optimized for your
+request. In some cases, this can reduce the size of the font file by up to 90%.
+To use this new beta feature, simply add 
+ to your Google Fonts API
+requests. For example if you're only using Inconsolata for the title of your
+blog, you can put the title itself as the value of 
+. Here is what the
+request would look like:
+As with all query strings, you should URL-encode the value:
+This feature also works for international fonts, allowing you to specify UTF-8
+characters. For example, ¡Hola! is represented as:
+When making headers or display texts on your website, you'll often want to
+stylize your text in a decorative way. To simplify your work, Google has
+provided a collection of font effects that you can use with minimal effort to
+produce beautiful display text. For example:
+To use this new beta feature, simply add 
+ to your Google
+Fonts API request and add the corresponding class name to the HTML element(s)
+that you want to affect. In our example above, we used the 
+
+font effect, so the request would look like:
+To use the effect, add the corresponding class name to your HTML element(s). The
+corresponding class name is always the effect name prefixed with 
+,
+so the class name for 
+ would be 
+:
+You can request multiple effects by separating the effect names with a pipe
+character (
+).
+Here is a complete listing of all the font effects that we offer:
+There are many more ways to style your fonts, and many things are possible
+through CSS. We are simply providing a few ideas to get you started. For more
+ideas, try Google searching "
+"
+and browse through many of the ideas that are already on the web!
+Except as otherwise noted, the content of this page is licensed under the 
+, and code samples are licensed under the 
+. For details, see our 
+. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated June 14, 2016.This guide explains how to use the Google Fonts API to add fonts to your web
+pages. You don't need to do any programming; all you have to do is add a special
+stylesheet link to your HTML document, then refer to the font in a CSS style.
+Here's an example. Copy and paste the following HTML into a file:
+Then open the file in a modern web browser. You should see a page displaying the
+following, in the font called Tangerine:
+That sentence is ordinary text, so you can change how it looks by using CSS. Try
+adding a shadow to the style in the previous example:
+You should now see a drop shadow under the text:
+And that's only the beginning of what you can do with the Fonts API and CSS.
+You can start using the Google Fonts API in just two steps:
+Add a stylesheet link to request the desired web font(s):
+
+Style an element with the requested web font, either in a stylesheet:
+
+or with an inline style on the element itself:
+
+For a list of fonts you can use, see
+
+.
+To determine what URL to use in your stylesheet link, start with the Google
+Fonts API base URL:
+Then, add the 
+ URL parameter, with one or more font family names and
+styles.
+For example, to request the
+
+ font:
+To request multiple font families, separate the names with a pipe character
+(
+).
+For example, to request the fonts
+
+,
+
+, and
+
+:
+Requesting multiple fonts allows you to use all of those fonts in your page.
+(But don't go overboard; most pages don't need very many fonts, and requesting a
+lot of fonts may make your pages slow to load.)
+The Google Fonts API provides the regular version of the requested fonts by
+default. To request other styles or weights, append a colon (
+) to the name of
+the font, followed by a list of styles or weights separated by commas (
+).
+For example:
+To find out which styles and weights are available for a given font, see the
+font's listing in 
+.
+For each style you request, you can give either the full name or an
+abbreviation; for weights, you can alternatively specify a numerical weight:
+For example, to request Cantarell italic and Droid Serif bold, you could use any
+of the following URLs:
+
+Some of the fonts in the 
+
+support multiple scripts (like Latin, Cyrillic, and Greek for example). In order
+to specify which subsets should be downloaded the subset parameter should be
+appended to the URL.
+For example, to request the Cyrillic subset of the
+
+ font, the URL
+would be:
+To request the Greek subset of the
+
+ font, the URL
+would be:
+To request both Greek and Cyrillic subsets of the
+
+ font, the URL
+would be:
+The Latin subset is always included if available and need not be specified.
+Please note that if a client browser supports unicode-range
+(
+)
+the subset parameter is ignored; the browser will select from the subsets
+supported by the font to get what it needs to render the text.
+For a complete list of available fonts and font subsets please see
+
+.
+Oftentimes, when you want to use a web font on your website or application, you
+know in advance which letters you'll need. This often occurs when you're using a
+web font in a logo or heading.
+In these cases, you should consider specifying a 
+ value in your font
+request URL. This allows Google to return a font file that's optimized for your
+request. In some cases, this can reduce the size of the font file by up to 90%.
+To use this new beta feature, simply add 
+ to your Google Fonts API
+requests. For example if you're only using Inconsolata for the title of your
+blog, you can put the title itself as the value of 
+. Here is what the
+request would look like:
+As with all query strings, you should URL-encode the value:
+This feature also works for international fonts, allowing you to specify UTF-8
+characters. For example, ¡Hola! is represented as:
+When making headers or display texts on your website, you'll often want to
+stylize your text in a decorative way. To simplify your work, Google has
+provided a collection of font effects that you can use with minimal effort to
+produce beautiful display text. For example:
+To use this new beta feature, simply add 
+ to your Google
+Fonts API request and add the corresponding class name to the HTML element(s)
+that you want to affect. In our example above, we used the 
+
+font effect, so the request would look like:
+To use the effect, add the corresponding class name to your HTML element(s). The
+corresponding class name is always the effect name prefixed with 
+,
+so the class name for 
+ would be 
+:
+You can request multiple effects by separating the effect names with a pipe
+character (
+).
+Here is a complete listing of all the font effects that we offer:
+There are many more ways to style your fonts, and many things are possible
+through CSS. We are simply providing a few ideas to get you started. For more
+ideas, try Google searching "
+"
+and browse through many of the ideas that are already on the web!
+Except as otherwise noted, the content of this page is licensed under the 
+, and code samples are licensed under the 
+. For details, see our 
+. Java is a registered trademark of Oracle and/or its affiliates.
+
+      
+      Last updated June 14, 2016.

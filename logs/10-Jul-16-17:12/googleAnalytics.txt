@@ -1,0 +1,9 @@
+To find the tracking code, tracking ID, or property number in your Analytics account:
+The 
+ is a snippet of JavaScript that collects and sends data to Analytics from a website. Itâs automatically generated for every web property. You need to copy and paste it from your account on to your web pages for Analytics to work. Learn more about how to 
+.
+The tracking code snippet is only for collecting data from websites. You can use the Analytics SDKs to collect data from mobile apps and the Measurement Protocol to collect data from other digital devices, like ticket kiosks and game consoles. Both the SDKs and the Measurement Protocol need to be set up by a developer.
+The 
+ is a string like UA-000000-01. It must be included in your tracking code to tell Analytics which account and property to send data to. It's automatically included in the JavaScript snippet for websites, but also needs to be included in other tracking technologies like the SDKs and the Measurement Protocol, for Analytics to work. The first set of numbers (000000, in the example above) refers to your account number, and the second set (-01) refers to the specific 
+ associated with the account. The tracking ID is in large font on the Tracking Info page. You can also to see the entire string in the first few lines of the tracking code JavaScript snippet.
+Check out our comprehensive list to learn more about Analytics solutions.

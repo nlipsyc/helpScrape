@@ -1,0 +1,85 @@
+After you've 
+ in your Shopify admin, you can create a new Buy Button for a product or a collection. This generates either a snippet of embed code for you to 
+, or a URL for you to add to your email campaign. After you embed it, the code displays a Buy Button.
+There are a few different ways that you can use Buy Buttons. To get started, choose the one you want from the 
+ page in your Shopify admin: 
+When you 
+, it displays a Buy Button for a single product from your Shopify store:
+
+When you 
+, it displays all of the products within one of your store's 
+. Your customer can click the products to see their details and an 
+ button: 
+When you 
+, it displays a Buy Button in an email message or campaign. When a customer clicks an email Buy Button, the checkout page for the product appears.
+To create a Buy Button:
+From your Shopify admin, click 
+.
+In the 
+ section, click 
+.
+From the 
+ dialog, select a product from your catalog or use the search to find a specific product: 
+From the 
+ page, you can customize the button's color, text, and appearance: 
+Your page's shopping cart receives items only from Buy Buttons that you've configured to send the user to the cart. You can do this by setting the 
+ option to 
+ when you 
+ in your Shopify admin. You can also 
+ of an existing Buy Button and set its 
+ attribute to 
+.
+If your product has multiple variants (like size or color), then you can select 
+ to let your customer choose which variant they want to buy, or select a specific variant to associate with the Buy Button from the drop-down menu.
+When you're done, click 
+.
+
+You can change these settings later by 
+ in the source HTML.
+From the 
+ dialog, 
+ the embed code, or click 
+: 
+Open the source HTML of the webpage where you want to display the Buy Button. 
+.
+ the embed code within the HTML where you want the button to appear, then save your changes.
+To create an embedded collection:
+From your Shopify admin, click 
+.
+In the 
+ section, click 
+.
+From the 
+ dialog, click 
+, and then choose the collection you want to embed: 
+When you're done setting up the collection, click 
+.
+
+You can change these settings later by 
+ manually.
+From the 
+ dialog, 
+ the embed code, or click 
+: 
+Open the source HTML of the webpage where you want to embed the collection. 
+.
+ the embed code within the HTML where you want the collection to appear.
+Save your changes to the source HTML.
+To create a Buy Button for your email campaign:
+From your Shopify admin, click 
+.
+In the 
+ section, click 
+.
+From the 
+ dialog, click the product you want to feature in your email campaign, and then click 
+: 
+If your product has more than one variant, choose the variant that you want to sell using the Buy Button. Each email Buy Button can feature only one product variant.
+From the 
+ page, click 
+ to copy the link to your Buy Button: 
+If you want to see how it will look to your customers, click 
+ in the preview: 
+Paste the link into your email campaign. For example, you can 
+.
+. For the latest version, please go to

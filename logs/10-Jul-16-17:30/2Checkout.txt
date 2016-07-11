@@ -1,0 +1,65 @@
+After the successful completion of a sale, 2Checkout can return the customer and sale parameters to a script or page on your site.
+Specifying an approved URL at the account level will direct all customers to the same URL after a successful checkout. This URL can be entered on the Site Management page by clicking the 
+tab followed by the 
+ sub-category. The Approved URL field is located towards the bottom of the Site Management page.
+.
+Please be certain to click the blue Save Changes button when entering or editing the approved URL on the 
+page.
+An approved URL can also be set at the product level by providing an approved URL when creating or editing the product on the Products page in your account. Product level approved URLs override the account level approved URL and can direct the customer to a specific location for that product, such as a download page. If a single product with a product level Approved URL is purchased, the sale parameters will be returned via POST. If multiple products with product level Approved URL's are ordered, the buyer will always land on the 2Checkout Order Processed page with a 
+ button for each product approved URL and the sale parameters will always be returned by GET.
+You may also choose to pass in the approved URL 'on the fly' (in real time) by using the x_receipt_link_url parameter. This parameter will override both product and account level approved URLs. 
+The value passed must match the domain registered to the account or the value will be ignored and the buyer will be returned to the Approved URL specified at the account or product level. If an Approved URL isn't specified at the account or product level and the value passed doesn't match the domain listed in the account the buyer will remain on the 2Checkout order processed page. 
+If you are returning the customer to a script on your end, it is important to note that parameter information will typically be returned by POST. However, parameters will be returned by GET if either the Header Redirect method is selected or the Plug-and-Play parameter set is used to purchase multiple products and the approved URLs are defined at the product level. Thus, if you are using a product level approved URL your return script should be able to handle both methods without breaking. 
+.
+ 
+Finally, you will determine the method in which your customer is returned to the approved URL. 2Checkout provides three return methods. You may send the customer to the 2Checkout order processed page which will display a Finalize button to redirect the customer to your Approved URL.  You may bypass the 2Checkout order processed page using the Header Redirect method, or you can immediately display your approved URL to the customer while they remain on our server by using the Direct Return method. Your return method can be selected on the Site Management page in the Direct Return section of the page.  There are three direct return methods: Given Links, Direct Return and Header Redirect.
+With the Return Method set to 
+, the customer will be taken to our Order Processed page after completing a successful purchase. This page will feature a Finalize Your Order button. When clicked, the customer and collected sale parameters will be directed to the provided approved URL by POST.
+With the Return Method set to 
+, sale parameters will be posted automatically to the approved URL while it is fetched by our server and displayed to the customer. When using this Direct Return function the URL will be masked to the customer, appearing to still be on the 2Checkout.com domain. This method can be used with redirects as long as each page outputs more than 255 characters of content to the browser. If Direct Return encounters a page that redirects without outputting content the process will fail and the customer will be sent to our standard Order Processed page. This generally occurs with a header redirect from your Approved URL when that URL outputs less than 255 characters of content to the browser.
+This is a common issue as many developers will set their approved URL to a script that processes the return sales parameters then silently forwards the customer to another page. This is usually a thank you or download page for intangible products. The best solution is to handle all post-order processing on the page set as your approved URL, including the thank you message. If no redirects are used, meaning the URL is masked by our servers, then relative links will not point to the correct location. This can be corrected with the use of absolute paths on the approved URL page or by simply using a base tag in the head of the document to provide a reference for the relative paths.
+With the Return Method set to 
+ the customer will be immediately returned to your approved URL. Using this method, the sale parameters will be returned along with the customer using the GET method.
+Please be certain to click the blue Save Changes button when selecting or editing the Direct Return method on the 
+page.
+ 
+If you have problems with the return process you are welcome to contact us at 
+ to assist with troubleshooting the issue. 
+Your feedback helps us improve our site.
+Please tell us how we can make this article more useful.
+Characters Remaining: 
+Get an account and get started
+© 2000-
+ 2Checkout.com, Inc. All rights reserved.After the successful completion of a sale, 2Checkout can return the customer and sale parameters to a script or page on your site.
+Specifying an approved URL at the account level will direct all customers to the same URL after a successful checkout. This URL can be entered on the Site Management page by clicking the 
+tab followed by the 
+ sub-category. The Approved URL field is located towards the bottom of the Site Management page.
+.
+Please be certain to click the blue Save Changes button when entering or editing the approved URL on the 
+page.
+An approved URL can also be set at the product level by providing an approved URL when creating or editing the product on the Products page in your account. Product level approved URLs override the account level approved URL and can direct the customer to a specific location for that product, such as a download page. If a single product with a product level Approved URL is purchased, the sale parameters will be returned via POST. If multiple products with product level Approved URL's are ordered, the buyer will always land on the 2Checkout Order Processed page with a 
+ button for each product approved URL and the sale parameters will always be returned by GET.
+You may also choose to pass in the approved URL 'on the fly' (in real time) by using the x_receipt_link_url parameter. This parameter will override both product and account level approved URLs. 
+The value passed must match the domain registered to the account or the value will be ignored and the buyer will be returned to the Approved URL specified at the account or product level. If an Approved URL isn't specified at the account or product level and the value passed doesn't match the domain listed in the account the buyer will remain on the 2Checkout order processed page. 
+If you are returning the customer to a script on your end, it is important to note that parameter information will typically be returned by POST. However, parameters will be returned by GET if either the Header Redirect method is selected or the Plug-and-Play parameter set is used to purchase multiple products and the approved URLs are defined at the product level. Thus, if you are using a product level approved URL your return script should be able to handle both methods without breaking. 
+.
+ 
+Finally, you will determine the method in which your customer is returned to the approved URL. 2Checkout provides three return methods. You may send the customer to the 2Checkout order processed page which will display a Finalize button to redirect the customer to your Approved URL.  You may bypass the 2Checkout order processed page using the Header Redirect method, or you can immediately display your approved URL to the customer while they remain on our server by using the Direct Return method. Your return method can be selected on the Site Management page in the Direct Return section of the page.  There are three direct return methods: Given Links, Direct Return and Header Redirect.
+With the Return Method set to 
+, the customer will be taken to our Order Processed page after completing a successful purchase. This page will feature a Finalize Your Order button. When clicked, the customer and collected sale parameters will be directed to the provided approved URL by POST.
+With the Return Method set to 
+, sale parameters will be posted automatically to the approved URL while it is fetched by our server and displayed to the customer. When using this Direct Return function the URL will be masked to the customer, appearing to still be on the 2Checkout.com domain. This method can be used with redirects as long as each page outputs more than 255 characters of content to the browser. If Direct Return encounters a page that redirects without outputting content the process will fail and the customer will be sent to our standard Order Processed page. This generally occurs with a header redirect from your Approved URL when that URL outputs less than 255 characters of content to the browser.
+This is a common issue as many developers will set their approved URL to a script that processes the return sales parameters then silently forwards the customer to another page. This is usually a thank you or download page for intangible products. The best solution is to handle all post-order processing on the page set as your approved URL, including the thank you message. If no redirects are used, meaning the URL is masked by our servers, then relative links will not point to the correct location. This can be corrected with the use of absolute paths on the approved URL page or by simply using a base tag in the head of the document to provide a reference for the relative paths.
+With the Return Method set to 
+ the customer will be immediately returned to your approved URL. Using this method, the sale parameters will be returned along with the customer using the GET method.
+Please be certain to click the blue Save Changes button when selecting or editing the Direct Return method on the 
+page.
+ 
+If you have problems with the return process you are welcome to contact us at 
+ to assist with troubleshooting the issue. 
+Your feedback helps us improve our site.
+Please tell us how we can make this article more useful.
+Characters Remaining: 
+Get an account and get started
+© 2000-
+ 2Checkout.com, Inc. All rights reserved.

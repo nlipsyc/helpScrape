@@ -1,0 +1,45 @@
+First, make sure you've enabled the link codes you want. Go to your 
+ tab under your user settings to check/uncheck the options you want to see, or 
+.
+The link codes appear on the right side of your screen. Left-click on a code, it will flash 'copied', to copy it, then paste it into your forum or website source code. Here is an overview of the linking options we offer:
+ 
+ Use this link to share your content via email or IM. This link will send you directly to the album or photo you're currently viewing. 
+This link is only available in the album view. This link provides you with a slideshow of all the photos within the album you're currently viewing.
+ This is the actual web location where your image is stored. Use this link for sites that ask you to insert an image from a web URL. 
+: Use this to embed a photo or video on websites like Wordpress, Hi5, Blogger, eBay and more! Your media will display at full size on the page you create.
+ 
+ 
+ Use this to embed a thumbnail version of your photo (160 x 120 pixels) instead of at full size.
+ 
+ 
+ Use this to embed your photo or video on bulletin boards and forums that do not allow you to input HTML coding. Your media will display at full size on the page you create.
+ Just like the IMG code, except a thumbnail version of your photo (160 x 120 pixels) will appear on the page.
+ 
+Don't worry about pictures linking back to your private album. If you link an image from a private album, 
+If 
+ is enabled, clicking on the image will take the person to that image, and that image alone.
+If it is disabled, clicking on the image will take the person to the photobucket.com home page. 
+If you need to get a lot of links, and quickly, try 
+and First, make sure you've enabled the link codes you want. Go to your 
+ tab under your user settings to check/uncheck the options you want to see, or 
+.
+The link codes appear on the right side of your screen. Left-click on a code, it will flash 'copied', to copy it, then paste it into your forum or website source code. Here is an overview of the linking options we offer:
+ 
+ Use this link to share your content via email or IM. This link will send you directly to the album or photo you're currently viewing. 
+This link is only available in the album view. This link provides you with a slideshow of all the photos within the album you're currently viewing.
+ This is the actual web location where your image is stored. Use this link for sites that ask you to insert an image from a web URL. 
+: Use this to embed a photo or video on websites like Wordpress, Hi5, Blogger, eBay and more! Your media will display at full size on the page you create.
+ 
+ 
+ Use this to embed a thumbnail version of your photo (160 x 120 pixels) instead of at full size.
+ 
+ 
+ Use this to embed your photo or video on bulletin boards and forums that do not allow you to input HTML coding. Your media will display at full size on the page you create.
+ Just like the IMG code, except a thumbnail version of your photo (160 x 120 pixels) will appear on the page.
+ 
+Don't worry about pictures linking back to your private album. If you link an image from a private album, 
+If 
+ is enabled, clicking on the image will take the person to that image, and that image alone.
+If it is disabled, clicking on the image will take the person to the photobucket.com home page. 
+If you need to get a lot of links, and quickly, try 
+and 

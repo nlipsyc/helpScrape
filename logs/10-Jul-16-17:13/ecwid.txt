@@ -1,0 +1,41 @@
+This is the most important Ecwid widget. It shows and includes a full-featured shopping cart with products, categories, catalog, checkout pages, etc.
+Ecwid can display products in three modes:
+You can always change the default modes by altering the product browser's settings.
+ 
+ 
+You can adjust product browser layout styles and behavior according to your needs. For that, you will need to slightly modify the widget integration code as described below.
+ 
+ The code defines products and categories listing styles. Let's see its parts:
+The number in braces is number of products in the particular view. I.e.:
+Default view mode:
+The 'style=' setting in the product browser widget code allows adding custom CSS to the layer that enclose all product browser code. Usually it isn't used. If you want to change some Ecwid elements, use custom CSS themes instead. More details: 
+.
+By default, the Product Browser widget opens with a list of root categories. But you can configure it to show a different category when user opens it for the first time. You can do it by adding the 'defaultCategoryId' option to the widget integration code. Please refer to this article for the details: 
+.
+If your product browser is installed on one page, but you have 
+/
+/
+ on all other pages of your site and you want them all to be linked to your main store page, the 
+ option can be used. Please find the details in this article: 
+.
+If you make changes, but don't see the product browser after that, make sure you don't have any kind of syntax errors.
+ 
+ If you have noticed that responsive design works incorrectly in your store, please, inform us about it on our 
+.
+ 
+ Enjoy!
+You cannot see them, because your store uses the old integration code. Since the view modes add some new CSS classes, they may not fit your site's CSS styles. That's why they're not enabled for all existing Ecwid users by default. In order to add them, follow these steps:
+If you use the WordPress Ecwid plugin, you don't need to update the code. Just update this plugin to the 0.3 version.
+ 
+ 
+ 
+ 
+ 
+Need help choosing the right Ecwid plan? Our Sales team has the answer you’re looking for.
+Join the Ecwid community. Discuss support topics and store ideas with other Ecwid users.
+Still have questions about Ecwid? Let us know! We will be glad to help you with your Ecwid store.
+Get real time status updates on Ecwid services here, 24/7
+PRODUCT
+HELP
+COMPANY
+PARTNERS

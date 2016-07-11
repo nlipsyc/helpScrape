@@ -1,0 +1,19 @@
+The method of transferring transaction results to the merchant's site so that it can take action based upon the result and display an appropriate message to the customer.
+If you choose to use relay response, your receipt generating script must be able to parse the results of the transaction and print the response to the screen. With relay response, you have more options for using the transaction response, including updating a database, writing to log files, sending customer receipt e-mails, etc.
+An error occurred while trying to report this transaction to the merchant. An e-mail has been sent to the merchant informing them of the error. The following is the result of the attempt to charge your credit card. This transaction cannot be accepted.
+This error indicates that Authorize.Net is unable to connect to the page that you have specified as your relay response url and is commonly encountered during development if you are using an internal test environment.
+We also recommend triple checking the URL within your code making sure it is the correct one and same one specified in your Authorize.Net settings page.
+There are no plans to introduce breaking changes into the JSON request/response. We are only marking it as beta in the chance that we are forced to make a breaking change in order to address a bug or unexpected behavior.
+Please 
+ so we can add name to a list of contacts and let you know if we are introducing any potentially breaking changes, but we would not recommend using it for a production system if you are not prepared to maintain it in the case of those changes being required.
+© 2015, 2016. Authorize.Net. All rights reserved. 
+All brand names and logos are the property of their respective owners, are used for identification purposes only, and do not imply product endorsement or affiliation with Authorize.Net.The method of transferring transaction results to the merchant's site so that it can take action based upon the result and display an appropriate message to the customer.
+If you choose to use relay response, your receipt generating script must be able to parse the results of the transaction and print the response to the screen. With relay response, you have more options for using the transaction response, including updating a database, writing to log files, sending customer receipt e-mails, etc.
+An error occurred while trying to report this transaction to the merchant. An e-mail has been sent to the merchant informing them of the error. The following is the result of the attempt to charge your credit card. This transaction cannot be accepted.
+This error indicates that Authorize.Net is unable to connect to the page that you have specified as your relay response url and is commonly encountered during development if you are using an internal test environment.
+We also recommend triple checking the URL within your code making sure it is the correct one and same one specified in your Authorize.Net settings page.
+There are no plans to introduce breaking changes into the JSON request/response. We are only marking it as beta in the chance that we are forced to make a breaking change in order to address a bug or unexpected behavior.
+Please 
+ so we can add name to a list of contacts and let you know if we are introducing any potentially breaking changes, but we would not recommend using it for a production system if you are not prepared to maintain it in the case of those changes being required.
+© 2015, 2016. Authorize.Net. All rights reserved. 
+All brand names and logos are the property of their respective owners, are used for identification purposes only, and do not imply product endorsement or affiliation with Authorize.Net.

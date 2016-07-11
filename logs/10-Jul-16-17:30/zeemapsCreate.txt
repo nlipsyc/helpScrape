@@ -1,0 +1,137 @@
+Create a new map by clicking on “Create a Free Map” button on the ZeeMaps home page.
+Configure your new map by giving it a title, description, password, starting location, using the form shown below. If you are in a hurry, you can skip the configuration items and just hit the “Create” button. You can configure your map later.
+From within an existing map, you can go to “Map -> Create New” to create a new map.
+Once you have created a map, you can add entries on the map marking locations of people or places, highlight regions on the map, publish the map in your web pages, and much more using the features described in this help document.
+
+No account is required to create, use, or save a map. We do recommend that you either register, or have an email associated with your map, in case you need to recover lost password, or be informed about important developments in ZeeMaps.
+
+Pins can be added individually, or in bulk by uploading a spreadsheet. To manually enter a pin, select “Additions” menu from the menu-bar at the top of your map, then select “Add Marker”. Enter your information into the pop-up dialog and click “Submit” You can specify the location of your pin by either entering the address information, or clicking on a location on the map.
+
+Yes, we support most countries in the world for adding locations.
+
+The minimum information you need is a city and country to create an entry.
+
+Contact files from other programs can be easily imported into your ZeeMap. Generate a spreadsheet for the records contained in Outlook, Access, ACT, or other popular contact management programs. Next, click “Additions → Upload Spreadsheet” at the top of your map to add those contacts on your map.
+
+Select menu items from the “Bulk Edits” menu above your map to make changes to multiple entries, regions or annotations.
+You can also make multiple changes to entries using the Export/Import mechanism. Do an export of your entries to a CSV file. Make changes to the entries. Do not change anything in the “Location Code” and “Name” columns. Once you have made the changes, upload the CSV file back into ZeeMaps. Make sure you select the “Overwrite existing entries” checkbox in the confirmation dialog when you import your changed file.
+
+There is no limit to the number of entries that you can add to your map. If you are adding entries through upload, you’ll need to purchase credits for adding more than 500 entries at a time.
+
+The map display will change depending on the number of entries in your map:
+
+Up to 500 entries, you will see the traditional “push-pin” on your map.
+
+For 500 to 15,000 entries, you will see “circle” markers on some locations to indicate multiple entries at that location. The circles will open up into push-pins as you zoom further in.
+
+Beyond 15,000 entries, markers will be shown as dots on the map, with increasing sizes as you zoom in.
+
+Double-click on the marker pin for the entry you’d like to change. This should bring up a dialog box that will allow you to make changes to that entry.
+
+You can relocate a pin by just dragging and dropping it to the new location.
+
+You can delete one entry at a time, by double-clicking on a marker and then use the Delete button in the resulting dialog. For deleting multiple entries at a time, use the Deletions menu item on your map.
+
+Photos and pictures can be included while you are creating an entry by uploading the file in the “Media” tab of the “Add Marker” dialog. Or, you can add a photo after an entry has been created by double-clicking on the marker to get an edit dialog. Use the “Media” tab in the edit dialog to add or modify photo and other media.
+
+Yes, Audio files (mp3) or YouTube videos can be added to individual map entries in the same way as photo’s can be added.
+
+Go to Map → Map Name on your map to set or change its name. You can also click on the name of the map at the top of the page, and a text box will appear where you can set the name.
+
+
+
+To show a description under the map name, go to Map > Describe and add a description for your map. The description will appear under the map name above the map. Due to space limitation, the description may be shortened in the map display. To see the complete description, click on the displayed shortened description.
+
+
+
+You can define legend values for different marker colors using the Settings > Map Legend menu item. Change the name of any marker group and click Submit. The map will reload and the legend will appear at the bottom of the map. For legends to appear in published maps, make sure you check the box for “With map legend” when you get the publish map code.
+
+You can get the URL link for your map by going to Print or Share > Share Link/URL. Select the top URL. If your map name is unique, you can use the following format for your URL: //www.zeemaps.com/your_map_name where “your_map_name” is the name of your map with spaces replaced with underscore character (“_”). For special characters, try using one or two underscores.
+
+
+As shown in the dialog above, the Share URL is for when you want to share a view-only map with others. If you want to share a fully editable map, use the second URL which says “editable version”.
+Vanity URLs, or custom addresses, are also available for a small fee. Go to Map -> Vanity URLs and choose your URL name and a subscription plan. Click Submit to be taken to an easy PayPal page.
+
+
+
+Maps you create with ZeeMaps are automatically saved to our servers.
+
+Complete maps cannot be deleted. In order to erase your map, you can remove all its entries and rename it to something meaningless.
+
+  Use this form to create your own interactive map.
+  
+Once you create a map, you can
+  add markers to the map, highlight regions, 
+  add text annotations, upload addresses from Excel 
+  spreadsheets, etc.
+  
+
+  Share the map in presentations using PNG or PDF images.Create a new map by clicking on “Create a Free Map” button on the ZeeMaps home page.
+Configure your new map by giving it a title, description, password, starting location, using the form shown below. If you are in a hurry, you can skip the configuration items and just hit the “Create” button. You can configure your map later.
+From within an existing map, you can go to “Map -> Create New” to create a new map.
+Once you have created a map, you can add entries on the map marking locations of people or places, highlight regions on the map, publish the map in your web pages, and much more using the features described in this help document.
+
+No account is required to create, use, or save a map. We do recommend that you either register, or have an email associated with your map, in case you need to recover lost password, or be informed about important developments in ZeeMaps.
+
+Pins can be added individually, or in bulk by uploading a spreadsheet. To manually enter a pin, select “Additions” menu from the menu-bar at the top of your map, then select “Add Marker”. Enter your information into the pop-up dialog and click “Submit” You can specify the location of your pin by either entering the address information, or clicking on a location on the map.
+
+Yes, we support most countries in the world for adding locations.
+
+The minimum information you need is a city and country to create an entry.
+
+Contact files from other programs can be easily imported into your ZeeMap. Generate a spreadsheet for the records contained in Outlook, Access, ACT, or other popular contact management programs. Next, click “Additions → Upload Spreadsheet” at the top of your map to add those contacts on your map.
+
+Select menu items from the “Bulk Edits” menu above your map to make changes to multiple entries, regions or annotations.
+You can also make multiple changes to entries using the Export/Import mechanism. Do an export of your entries to a CSV file. Make changes to the entries. Do not change anything in the “Location Code” and “Name” columns. Once you have made the changes, upload the CSV file back into ZeeMaps. Make sure you select the “Overwrite existing entries” checkbox in the confirmation dialog when you import your changed file.
+
+There is no limit to the number of entries that you can add to your map. If you are adding entries through upload, you’ll need to purchase credits for adding more than 500 entries at a time.
+
+The map display will change depending on the number of entries in your map:
+
+Up to 500 entries, you will see the traditional “push-pin” on your map.
+
+For 500 to 15,000 entries, you will see “circle” markers on some locations to indicate multiple entries at that location. The circles will open up into push-pins as you zoom further in.
+
+Beyond 15,000 entries, markers will be shown as dots on the map, with increasing sizes as you zoom in.
+
+Double-click on the marker pin for the entry you’d like to change. This should bring up a dialog box that will allow you to make changes to that entry.
+
+You can relocate a pin by just dragging and dropping it to the new location.
+
+You can delete one entry at a time, by double-clicking on a marker and then use the Delete button in the resulting dialog. For deleting multiple entries at a time, use the Deletions menu item on your map.
+
+Photos and pictures can be included while you are creating an entry by uploading the file in the “Media” tab of the “Add Marker” dialog. Or, you can add a photo after an entry has been created by double-clicking on the marker to get an edit dialog. Use the “Media” tab in the edit dialog to add or modify photo and other media.
+
+Yes, Audio files (mp3) or YouTube videos can be added to individual map entries in the same way as photo’s can be added.
+
+Go to Map → Map Name on your map to set or change its name. You can also click on the name of the map at the top of the page, and a text box will appear where you can set the name.
+
+
+
+To show a description under the map name, go to Map > Describe and add a description for your map. The description will appear under the map name above the map. Due to space limitation, the description may be shortened in the map display. To see the complete description, click on the displayed shortened description.
+
+
+
+You can define legend values for different marker colors using the Settings > Map Legend menu item. Change the name of any marker group and click Submit. The map will reload and the legend will appear at the bottom of the map. For legends to appear in published maps, make sure you check the box for “With map legend” when you get the publish map code.
+
+You can get the URL link for your map by going to Print or Share > Share Link/URL. Select the top URL. If your map name is unique, you can use the following format for your URL: //www.zeemaps.com/your_map_name where “your_map_name” is the name of your map with spaces replaced with underscore character (“_”). For special characters, try using one or two underscores.
+
+
+As shown in the dialog above, the Share URL is for when you want to share a view-only map with others. If you want to share a fully editable map, use the second URL which says “editable version”.
+Vanity URLs, or custom addresses, are also available for a small fee. Go to Map -> Vanity URLs and choose your URL name and a subscription plan. Click Submit to be taken to an easy PayPal page.
+
+
+
+Maps you create with ZeeMaps are automatically saved to our servers.
+
+Complete maps cannot be deleted. In order to erase your map, you can remove all its entries and rename it to something meaningless.
+
+  Use this form to create your own interactive map.
+  
+Once you create a map, you can
+  add markers to the map, highlight regions, 
+  add text annotations, upload addresses from Excel 
+  spreadsheets, etc.
+  
+
+  Share the map in presentations using PNG or PDF images.
